@@ -1,0 +1,101 @@
+* {
+    background-color: #63856a;
+    font-family: 'Architects Daughter', cursive;
+}
+
+:root {
+    --chalk-yellow: #f5f9ad;
+    --white: #fff;
+}
+
+.heading-box {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border: solid;
+    border-color: rgb(31, 1, 1);
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.911);
+    transition: 0.5s;
+    border-radius: 5pt;
+    margin:40px;
+    padding: 50px;
+    color: var(--chalk-yellow);
+}
+
+.heading-box h1 {
+    align-items: center;
+    margin: 0pt;
+    margin-bottom: 15px;
+    font-size: 50px;
+}
+
+.heading-box button{
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.questions {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border: solid;
+    border-color: rgb(31, 1, 1);
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.911);
+    transition: 0.5s;
+    border-radius: 5pt;
+    margin:50px;
+    padding: 50px;
+    color: var(--chalk-yellow);
+}
+
+.time {
+    position: fixed;
+    top:0;
+    right: 0;
+    padding: 10px;
+}
+
+ .questions h3 {
+    font-size: 35px;
+}
+
+.scoreboard {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    border: solid;
+    border-color: rgb(31, 1, 1);
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.911);
+    transition: 0.5s;
+    border-radius: 5pt;
+    margin:0 auto;
+    padding: 30px;
+    color: var(--chalk-yellow);
+}
+
+button {
+    color: white;
+    margin: 10px;
+    padding: 5px;
+}
+
+footer {display: flex;
+justify-content: center;
+flex-direction: column;
+align-items: center;
+width: auto;
+border: solid;
+border-color: #63856a;
+box-shadow: 0 4px 8px rgba(255, 255, 255, 0.911);
+transition: 0.5s;
+border-radius: 5pt;
+margin-top: 50px;
+padding: 30px;
+color: var(--chalk-yellow);
+font-size: 20px;
+}
