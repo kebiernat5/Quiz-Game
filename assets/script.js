@@ -5,6 +5,7 @@ var clock = document.querySelector("#timer");
 var answers = document.querySelector("#answers");
 var starterHeader = document.querySelector("#startPrompt");
 var time = 500;
+var questionStyle = document.querySelector(".questionStyle");
 var questionIndex = 0;
 var timer;
 var score = 0
@@ -12,6 +13,8 @@ var scorecard = document.querySelector("#finalScore")
 var highScores = document.querySelector(".highScores");
 highScores.style.display = "none";
 questionContainer.style.display = "none";
+questionStyle.style.display = "none"
+
 
 
 var questions = [
@@ -45,6 +48,7 @@ startButton.addEventListener("click", function (e) {
   // hide the text and start button
   startButton.style.visibility = "hidden";
   starterHeader.style.display = "none";
+  questionStyle.style.display = "block";
   questionContainer.style.display = "block";
   startTimer();
   displayQuestion();
@@ -85,7 +89,7 @@ answers.addEventListener("click", function (e) {
   if (time < 1){
     endGame();
   }
-
+  
   // Or did we choose wrong
   // Increase our question index
   questionIndex++;
@@ -103,10 +107,34 @@ function endGame() {
   scoreText.textContent = "Score! " + score;
   scorecard.append(scoreText);
   highScores.style.display = "block";
+} 
 
- } 
- 
- {}
+
+var mostRecentScore = localStorage.getItem(mostRecentScore);
+// Creating a variable to be able to add initials to the local storage from the input text
+var username = document.getElementById("#username");
+// Creating the variable to activate the button when the user clicks it after text has been entered
+var saveHighScoreBtn = document.getElementById(saveScoreBtn)
+// Creating event based on when the user inputs their information into the input box
+username.addEventListener("change", () => {
+  saveHighScoreBtn.enabled = username.value;
+})
+
+saveHighScore = (e) => {
+  console.log("clicked the save button")
+};
+{}
+
+// Make a function
+
+// create a variable that will check local storage for a high scores array
+var highScores = localStorage.JSON.parse(localStorage.getItem("High Score")) || []
+// set item turns into an arr
+// When someone saves their high scores it gets pushed to this array
+// save as an object with their name "" and their score whatever score they earned
+// Push to high scores array
+// set item in local storage
+
 Collapse
 
 
