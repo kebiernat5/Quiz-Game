@@ -8,15 +8,15 @@ function saveScore(event){
    // record initials with score to local storage
 
 
-import {userScore} from  "assets/script.js"
-
-    var currentScore = {
-        score: finalScore,
-        name: username.value,
+   
+   var currentScore = {
+       score: finalScore,
+       name: username.value,
     }
-
-
+    
+    
     // highScores.push(currentScore);
     console.log(currentScore)
     
 };
+// import {userScore} from  "assets/script.js"

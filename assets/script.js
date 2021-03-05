@@ -4,7 +4,7 @@ var startButton = document.querySelector("#start");
 var clock = document.querySelector("#timer");
 var answers = document.querySelector("#answers");
 var starterHeader = document.querySelector("#startPrompt");
-var time = 500;
+var time = 60;
 var questionStyle = document.querySelector(".questionStyle");
 var questionIndex = 0;
 var timer;
@@ -118,20 +118,21 @@ var saveHighScoreBtn = document.getElementById(saveScoreBtn)
 // Creating event based on when the user inputs their information into the input box
 username.addEventListener("change", () => {
   saveHighScoreBtn.enabled = username.value;
-})
+});
 
 saveHighScore = (e) => {
   console.log("clicked the save button")
 };
 {}
-var userScore = {
-  score
-}
-export {userScore} to "end.js"
-// Make a function
+
+
+
+// export {userScore} to "end.js"
+// // Make a function
 
 // create a variable that will check local storage for a high scores array
-var highScores = localStorage.JSON.parse(localStorage.getItem("High Score")) || []
+var recentScores = document.querySelector("highScores")
+var highScores = localStorage.JSON.parse(localStorage.getItem("highscoreboard")) || []
 // set item turns into an arr
 // When someone saves their high scores it gets pushed to this array
 // save as an object with their name "" and their score whatever score they earned

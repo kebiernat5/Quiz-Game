@@ -62,7 +62,7 @@
     font-size: 35px;
 }
 
-.scoreboard {
+.highscoreboard {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -118,7 +118,7 @@ input {
     border-color: white;
     border-radius: 5px;
     background-color:  #63856a;
-    box-shadow: box-shadow: 0 4px 8px rgba(255, 255, 255, 0.911); 
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.911);
 }
 
 input::placeholder{
