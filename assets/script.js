@@ -124,7 +124,10 @@ saveHighScore = (e) => {
   console.log("clicked the save button")
 };
 {}
-
+var userScore = {
+  score
+}
+export {userScore} to "end.js"
 // Make a function
 
 // create a variable that will check local storage for a high scores array
