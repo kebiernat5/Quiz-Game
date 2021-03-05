@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel ="stylesheet" href = "assets/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Creating High Scores Page -->
+    <div class = "high scoreboard">
+        <h1 id="finalScore ">Final Score</h1>
+        <!-- Form in which the user can save their initials -->
+        <form>
+            <input 
+            type = "text"
+            name = "Initials"
+            id = "username"
+            placeholder="Initials"
+            >
+            <!-- Button for the user to press to trigger the webpage to store the data they've entered -->
+          <button
+            type = "submit"
+            class = "btn"
+            id = "saveScoreBtn"
+            onclick="saveHighScore(event)" 
+          > 
+          <!-- The line above is some Java Script to define the function -->
+        </button>  
+        </form>
+        High Scores</div>
+    <div class="form">Form</div>
+    <script src="assets/script.js"> </script>
+</body>
+</html>

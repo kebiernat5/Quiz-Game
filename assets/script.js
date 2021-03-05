@@ -2,172 +2,115 @@
 // click the start button
 var startButton = document.querySelector("#start");
 var clock = document.querySelector("#timer");
+var answers = document.querySelector("#answers");
 var starterHeader = document.querySelector("#startPrompt");
 var time = 500;
-
-
+var questionIndex = 0;
+var timer;
+var score = 0
+var scorecard = document.querySelector("#finalScore")
+var highScores = document.querySelector(".highScores");
+highScores.style.display = "none";
 questionContainer.style.display = "none";
+
 
 var questions = [
   {
     text: "Who wrote Hamilton An American Musical?",
     answers: ["Lin Manuel Miranda", "Barack Obama", "Tupac", "The Roots"],
-    correctAnswer: 1,
+    correctAnswer: "Lin Manuel Miranda",
   },
   {
-    text: "Who wrote Hamilton An American Musical?",
-    answers: ["Lin Manuel Miranda", "Barack Obama", "Tupac", "The Roots"],
-    correctAnswer: 1,
+    text: "Which Tony Award Winning musical opened in 2009 at the Schubert Theatre?",
+    answers: ["A Chorus Line", "Memphis the Musical", "American Idiot", "The Drowsy Chaperone"],
+    correctAnswer: "Memphis the Musical",
   },
   {
-    text: "Who wrote Hamilton An American Musical?",
-    answers: ["Lin Manuel Miranda", "Barack Obama", "Tupac", "The Roots"],
-    correctAnswer: 1,
+    text: "When did Rent the Musical open on Broadway?",
+    answers: ["1989", "1995", "1990", "1996"],
+    correctAnswer: "1996",
   },
   {
-    text: "Who wrote Hamilton An American Musical?",
-    answers: ["Lin Manuel Miranda", "Barack Obama", "Tupac", "The Roots"],
-    correctAnswer: 1,
+    text: "Who starred in Lincon Center's productions of South Pacific and The King and I?",
+    answers: ["Patti Lupone", "Kelly O'Hara", "Laura Benanti", "Sutton Foster"],
+    correctAnswer: "Kelly O'Hara",
   },
   {
-    text: "Who wrote Hamilton An American Musical?",
-    answers: ["Lin Manuel Miranda", "Barack Obama", "Tupac", "The Roots"],
-    correctAnswer: 1,
+    text: "Who choreographed the original production of 42nd Street?",
+    answers: ["Martha Graham", "Agnes De Mille", "Gower Champion", "Bob Fosse"],
+    correctAnswer: "Gower Champion",
   },
-]
-
+];
 startButton.addEventListener("click", function (e) {
-    startTimer();
-    displayQuestion();
+  // hide the text and start button
+  startButton.style.visibility = "hidden";
+  starterHeader.style.display = "none";
+  questionContainer.style.display = "block";
+  startTimer();
+  displayQuestion();
 });
-
 function startTimer() {
-  setInterval(function (){
+  timer = setInterval(function () {
     time--;
     clock.textContent = time;
+    // If we run out of time
+    // Game over
   }, 1000);
 }
-
 function displayQuestion() {
-  // hide the text and start button
-  startButton.style.visibility = "hidden";
-  starterHeader.style.display = "none";
+  var question = questions[questionIndex];
   // display question 1
-  questionContainer.style.display = "block";
-  questionText.textContent = questions[0].text;
-
+  questionText.textContent = question.text;
   // render the answers
-  questions[0].answers.forEach(function (item) {
+  answers.innerHTML = "";
+  question.answers.forEach(function (item) {
     var answerBtn = document.createElement("button");
     answerBtn.textContent = item;
     answers.append(answerBtn);
-
-    answerBtn.addEventListener("click", function (e){
-      questionText.style.display = "none";
-      questionContainer.style.display = "none";
-
-
-      displayQuestion2();
-    })
-  })
+  });
 }
+answers.addEventListener("click", function (e) {
+  // If the target is not a button
+  // Stop execution early
+  if (!e.target.matches("button")) return;
+  var val = e.target.textContent;
+  // Did we choose correct
+  if (val === questions[questionIndex].correctAnswer){
+    score++;
+    console.log(score);
+  }
+  if (val !== questions[questionIndex].correctAnswer){
+    time-=10
+  }
+  if (time < 1){
+    endGame();
+  }
 
-function displayQuestion2() {
-  // hide the text and start button
-  startButton.style.visibility = "hidden";
-  starterHeader.style.display = "none";
-  displayQuestion.style.display = "hidden";
-  // display question 2
-  questionContainer.style.display = "block";
-  questionText.textContent = questions[0].text;
+  // Or did we choose wrong
+  // Increase our question index
+  questionIndex++;
+  // Make sure we still have questions
+  // Render next question if we do
+  // End game if we are out of questions
+  if (questionIndex === questions.length) {
+    endGame();
+  } else {
+    displayQuestion();
+  }
+});
+function endGame() {
+  var scoreText = document.createElement("h2");
+  scoreText.textContent = "Score! " + score;
+  scorecard.append(scoreText);
+  highScores.style.display = "block";
 
-  // render the answers
-  questions[1].answers.forEach(function (item) {
-    var answerBtn = document.createElement("button");
-    answerBtn.textContent = item;
-    answers.append(answerBtn);
-
-    answerBtn.addEventListener("click", function (e){
-      questionText.style.display = "none";
-      questionContainer.style.display = "none";
-
-
-      displayQuestion3();
-    })
-  })
-}
-
-function displayQuestion3() {
-  // hide the text and start button
-  startButton.style.visibility = "hidden";
-  // starterHeader.style.display = "none";
-  // display question 3
-  questionContainer.style.display = "block";
-  questionText.textContent = questions[0].text;
-
-  // render the answers
-  questions[2].answers.forEach(function (item) {
-    var answerBtn = document.createElement("button");
-    answerBtn.textContent = item;
-    answers.append(answerBtn);
-
-    answerBtn.addEventListener("click", function (e){
-      questionText.style.display = "none";
-      questionContainer.style.display = "none";
+ } 
+ 
+ {}
+Collapse
 
 
-      displayQuestion4();
-    })
-  })
-}
 
-function displayQuestion4() {
-  // hide the text and start button
-  startButton.style.visibility = "hidden";
-  starterHeader.style.display = "none";
-  // display question 4
-  questionContainer.style.display = "block";
-  questionText.textContent = questions[0].text;
-
-  // render the answers
-  questions[3].answers.forEach(function (item) {
-    var answerBtn = document.createElement("button");
-    answerBtn.textContent = item;
-    answers.append(answerBtn);
-
-    answerBtn.addEventListener("click", function (e){
-      questionText.style.display = "none";
-      questionContainer.style.display = "none";
-
-
-      displayQuestion5();
-    })
-  })
-}
-
-function displayQuestion5() {
-  // hide the text and start button
-  startButton.style.visibility = "hidden";
-  starterHeader.style.display = "none";
-  // display question 5
-  questionContainer.style.display = "block";
-  questionText.textContent = questions[0].text;
-
-  // render the answers
-  questions[4].answers.forEach(function (item) {
-    var answerBtn = document.createElement("button");
-    answerBtn.textContent = item;
-    answers.append(answerBtn);
-
-    answerBtn.addEventListener("click", function (e){
-      questionText.style.display = "none";
-      questionContainer.style.display = "none";
-
-
-      displayQuestion5();
-    })
-  })
-}
 
 
 

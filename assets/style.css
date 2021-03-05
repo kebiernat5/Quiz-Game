@@ -99,3 +99,20 @@ padding: 30px;
 color: var(--chalk-yellow);
 font-size: 20px;
 }
+
+form {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--white);
+}
+
+input {
+    margin-bottom: 1rem;
+    width: 20rem;
+    height: 1.5rem;
+    font-size: 1.8rem;
+    border: none;
+    box-shadow: box-shadow: 0 4px 8px rgba(255, 255, 255, 0.911); ;
+}
