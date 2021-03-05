@@ -1,7 +1,13 @@
 # Quiz-Game
-Coding an Online Quiz Using JavaScript
-code quiz
-LOGIC - JS
+
+## Link to site
+The URL to this page can be found here https://kebiernat5.github.io/Quiz-Game/.
+
+## My Logic Process 
+
+In starting this project, I initially wanted to set up my logic in a way that  was understandable to me. This is what I worked through. 
+
+### LOGIC - JS
 click the start button
     timer starts 
     I am presented with a question
@@ -13,6 +19,11 @@ if no more questions or the timer reaches 0
     game over
         ask for user initials
         save initial and score
+
+## My Structure Process
+
+After figuring out how I wanted the logic to work, I then worked through how I wanted the page to look when the user arrived at the page. I decided I wanted a chalk board theme to jazz things up a bit, so I created a CSS file to apply the different styles I wanted to in order to achieve the look on the page. 
+
 HTML area
 Start Page
     start button
@@ -51,3 +62,4 @@ Main page
     Question area
     Link to view High Scores
 High Scores Page
+
